@@ -27,7 +27,7 @@ public class Task7DB extends Thread {
     }
 
     @Test(dataProvider = "Data")
-    public void run_testcase(HashMap<DbBean, DbBean> data) throws Exception {
+    public void run_testcase(HashMap<String, String> data) throws Exception {
         System.out.print("当前执行的用例是：第" + (data.get("_id")) + "行:" + "isTest：【"
                 + data.get("isTest") + "】--" + "A :【"
                 + data.get("a") + "】--" + "B :【"
@@ -57,7 +57,7 @@ public class Task7DB extends Thread {
     @BeforeTest
     public void beforeTest() throws Exception {
         System.out.println("Start running");
-        Loading_IT_sql = "SELECT * from NGtest_data;";
+        Loading_IT_sql = "SELECT * from NGtest_people;";
         String T_mysql_driver = "com.mysql.cj.jdbc.Driver";
         String T_mysql_url="jdbc:mysql://localhost:3306/zou?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&characterEncoding=UTF8";    //JavaTest为你的数据库名称
 //        String T_mysql_url = "jdbc:mysql://localhost:3306/zou?useUnicode=true&characterEncoding=UTF-8";
